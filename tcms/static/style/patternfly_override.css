@@ -1,5 +1,11 @@
 /* override some default Patternfly styles */
-nav.navbar-default { border-top-color: #3C8D2C; }
+.ea-placement {
+    visibility: hidden !important;
+}
+
+.navbar.navbar-default {
+    border-top-color: #e11f00 !important;
+} 
 
 .login-pf, .login-pf body {
     background-attachment: fixed;
@@ -69,7 +75,7 @@ img {
 }
 
 .property-value a {
-    color: #c00; inherit !important;
+    color: #c00 inherit !important;
 }
 
 a.disabled {
