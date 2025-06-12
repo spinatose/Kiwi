@@ -93,14 +93,14 @@ bandit_site_packages:
 docker-image:
 	rm -rf dist/
 	docker pull registry.access.redhat.com/ubi9-minimal
-	docker build -t kiwitcms/buildroot -f Dockerfile.buildroot .
+	docker build -t redhawk-tech.com/kiwitcms/kiwi:v1 -f Dockerfile.buildroot .
 	docker run --rm --security-opt label=disable \
-	            -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot \
+	            -v `pwd`:/host --entrypoint /bin/cp redhawk-tech.com/kiwitcms/kiwi:v1 \
 	            -r /Kiwi/dist/ /host/
 	docker run --rm --security-opt label=disable \
-	            -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot \
+	            -v `pwd`:/host --entrypoint /bin/cp redhawk-tech.com/kiwitcms/kiwi:v1 \
 	            -r /venv /host/dist/
-	docker build -t pub.kiwitcms.eu/kiwitcms/kiwi:latest .
+	docker build -t redhawk-tech.com/kiwitcms/kiwi:v1 .
 
 
 .PHONY: docker-manifest
